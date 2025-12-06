@@ -1,0 +1,18 @@
+## Title: Auto Tank Demarker
+## Notes: Automatically removes the blue square marker on you if you're a tank, outside of M+
+
+## Author: SiJiL
+
+## Interface: 110207
+## X-Flavor: retail
+## X-Expansion: TWW
+## X-Localizations: enUS, enGB
+## X-CompatibleLocales: enUS, enGB
+
+## Version: 1.0.0
+
+## SavedVariables:
+## SavedVariablesPerCharacter: AutoTankDemarkerDB
+
+AutoTankDemarker.lua
+AdminPanel.lua
