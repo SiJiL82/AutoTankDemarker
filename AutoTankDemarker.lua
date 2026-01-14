@@ -45,7 +45,7 @@ loopFrame:SetScript("OnUpdate", function(self, elapsed)
         return
     end
     local currentTime = GetTime()
-    if currentTime - lastLoopTime >= 1 then
+    if currentTime - lastLoopTime >= 0.3 then
         -- Check if player is tank
         if IsPlayerTank() then
             -- Check if player has a marker
