@@ -7,23 +7,29 @@ local lastLoopTime = 0
 
 local function IsPlayerTank()
     local specIndex = GetSpecialization()
+
     if not specIndex then
         return false
     end
+
     local _, _, _, _, role = GetSpecializationInfo(specIndex)
+
     return role == "TANK"
 end
 
 local function IsInDungeonOrRaidNotMythicPlus()
     local inInstance, instanceType = IsInInstance()
+
     if not inInstance then
         return false
     end
+
     -- Check for party (dungeon) or raid instance
     if instanceType == "party" or instanceType == "raid" then
         local difficulty = select(3, GetInstanceInfo())
         return difficulty ~= 8
     end
+
     return false
 end
 
@@ -31,6 +37,7 @@ local function StartLoop()
     if not IsPlayerTank() then
         return
     end
+
     isLoopRunning = true
     lastLoopTime = GetTime()
 end
@@ -44,7 +51,9 @@ loopFrame:SetScript("OnUpdate", function(self, elapsed)
     if not isLoopRunning then
         return
     end
+
     local currentTime = GetTime()
+    
     if currentTime - lastLoopTime >= 0.3 then
         -- Check if player is tank
         if IsPlayerTank() then
