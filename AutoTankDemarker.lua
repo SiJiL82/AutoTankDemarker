@@ -33,7 +33,31 @@ local function IsInDungeonOrRaidNotMythicPlus()
     return false
 end
 
+local function CanRemoveRaidMarkers()
+    local isInRaid = IsInRaid()
+    
+    if not isInRaid then
+        return true  -- Can modify markers on yourself outside of raid
+    end
+    
+    -- Check if player is raid leader
+    if UnitIsGroupLeader("player") then
+        return true
+    end
+    
+    -- Check if player has assistant role
+    if UnitIsGroupAssistant("player") then
+        return true
+    end
+    
+    return false
+end
+
 local function StartLoop()
+    if not CanRemoveRaidMarkers() then
+        print("Cannot remove raid markers: insufficient permissions")
+        return
+    end
     if not IsPlayerTank() then
         return
     end
