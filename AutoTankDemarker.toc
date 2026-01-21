@@ -3,13 +3,12 @@
 
 ## Author: SiJiL
 
-## Interface: 110207
+## Interface: 120001, 120000
 ## X-Flavor: retail
-## X-Expansion: TWW
 ## X-Localizations: enUS, enGB
 ## X-CompatibleLocales: enUS, enGB
 
-## Version: 1.0.0
+## Version: 1.0.2
 
 ## SavedVariables:
 ## SavedVariablesPerCharacter: AutoTankDemarkerDB
